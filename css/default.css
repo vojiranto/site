@@ -26,6 +26,7 @@ body {
 div#header {
     color: white;
     position: fixed;
+    padding-top: 10px;
     border-bottom: 2px solid black;
     margin-bottom: 0px;
     padding: 22px 0px 12px 0px;
