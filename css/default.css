@@ -84,11 +84,18 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 }
-
-.sidebar {
-	position: fixed;
-	width: 200px;
+@media screen and (min-width: 400px) {
+    .sidebar {
+    	position: fixed;
+    	width: 200px;
+    }
 }
+@media screen and (max-width: 400px) {
+    .sidebar {
+    	position: fixed;
+    }
+}
+
 
 .navigation {
 	border-radius: 5px;
