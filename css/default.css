@@ -7,7 +7,6 @@ body {
     .body {
         color: black;
         font-size: 16px;
-        margin: 0px auto 0px auto;
         width: 600px;
         margin-left: 200px;
     }
@@ -17,7 +16,6 @@ body {
     .body {
         color: black;
         font-size: 16px;
-        margin: 0px auto 0px auto;
         margin-left: 200px;
         margin-right: 20px;
     }
