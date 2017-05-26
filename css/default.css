@@ -66,3 +66,19 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 }
+
+.sidebar {
+	position: fixed;
+	width: 200px;
+}
+
+.navigation, .tagcloud, .plugs {
+	border-radius: 5px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin-top: 0;
+	margin-bottom: 16px;
+}
+
