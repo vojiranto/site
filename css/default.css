@@ -85,18 +85,11 @@ p {
     -ms-hyphens: auto;
 }
 
-@media screen and (min-width: 400px) {
-    .sidebar {
-    	position: fixed;
-    	width: 200px;
-    }
+.sidebar {
+    position: fixed;
+    width: 10%;
 }
-@media screen and (max-width: 400px) {
-    .sidebar {
-    	position: fixed;
-    	width: 100px;
-    }
-}
+
 
 
 .navigation {
