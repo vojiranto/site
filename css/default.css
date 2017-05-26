@@ -93,6 +93,7 @@ p {
 @media screen and (max-width: 400px) {
     .sidebar {
     	position: fixed;
+    	width: 40%;
     }
 }
 
