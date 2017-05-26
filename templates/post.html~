@@ -1,0 +1,8 @@
+<div class="info">
+    <p>Размещено $date$</p>
+    $if(author)$
+        by $author$
+    $endif$
+</div>
+
+$body$
