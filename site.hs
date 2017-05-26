@@ -63,5 +63,39 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateField "date" "%B %e, %Y" `mappend`
+    dateFieldWith rusTimeLocale "date" "%B %e, %Y" `mappend`
     defaultContext
+
+rusTimeLocale :: TimeLocale
+rusTimeLocale =  TimeLocale {
+        wDays  = [("Sunday",   "Sun"),  ("Monday",    "Mon"),
+                  ("Tuesday",  "Tue"),  ("Wednesday", "Wed"),
+                  ("Thursday", "Thu"),  ("Friday",    "Fri"),
+                  ("Saturday", "Sat")],
+
+        months = [("January",   "Jan"), ("February",  "Feb"),
+                  ("March",     "Mar"), ("April",     "Apr"),
+                  ("May",       "May"), ("June",      "Jun"),
+                  ("July",      "Jul"), ("August",    "Aug"),
+                  ("September", "Sep"), ("October",   "Oct"),
+                  ("November",  "Nov"), ("December",  "Dec")],
+
+        amPm = ("AM", "PM"),
+        dateTimeFmt = "%a %b %e %H:%M:%S %Z %Y",
+        dateFmt = "%m/%d/%y",
+        timeFmt = "%H:%M:%S",
+        time12Fmt = "%I:%M:%S %p",
+        knownTimeZones =
+            [
+            TimeZone 0 False "UT",
+            TimeZone 0 False "GMT",
+            TimeZone (-5 * 60) False "EST",
+            TimeZone (-4 * 60) True "EDT",
+            TimeZone (-6 * 60) False "CST",
+            TimeZone (-5 * 60) True "CDT",
+            TimeZone (-7 * 60) False "MST",
+            TimeZone (-6 * 60) True "MDT",
+            TimeZone (-8 * 60) False "PST",
+            TimeZone (-7 * 60) True "PDT"
+            ]
+        }
