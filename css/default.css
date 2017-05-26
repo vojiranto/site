@@ -24,7 +24,7 @@ body {
         font-size: 16px;
         margin-left: 200px;
         margin-right: 40px;
-        padding: 20px 20px 20px 20px;
+        padding: 30px 20px 20px 20px;
     }
 }
 div#header_fix {
@@ -34,7 +34,7 @@ div#header_fix {
     background-color: #EEE;
     border: 0.5px solid black;
     width:100%;
-    height: 40px;
+    height: 30px;
 }
 
 div#header {
@@ -112,7 +112,7 @@ p {
 	border-top-left-radius: 0px;
 	border-bottom-left-radius: 0px;
     font-size: 20px; 
-	padding-top: 40px;
+	padding-top: 30px;
 	padding-bottom: 20px;
 	margin-top: 0;
 	margin-bottom: 16px;
