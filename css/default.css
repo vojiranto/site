@@ -25,7 +25,6 @@ body {
 }
 
 div#header {
-    border-bottom: 2px solid black;
     padding: 30px 100% 0px 100px;
 }
 
@@ -88,7 +87,6 @@ p {
 
 .sidebar {
     position: fixed;
-    border: 2px black;
     width: 10pc;
     height: 100%;
     border: 2px solid black;
