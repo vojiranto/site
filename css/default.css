@@ -3,6 +3,7 @@ body {
     color: black;
     font-size: 16px;
     margin: 0px auto 0px auto;
+    background-image: url(images/f.png);
 }
 @media screen and (min-width: 840px) {
     .body {
