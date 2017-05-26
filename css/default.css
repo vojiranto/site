@@ -13,7 +13,7 @@ body {
 
 div#header {
     border-bottom: 2px solid black;
-    margin-bottom: 30px;
+    margin-bottom: 50px;
     padding: 22px 0px 12px 0px;
 }
 
@@ -21,7 +21,7 @@ div#logo a {
     color: black;
     float: left;
     font-size: 20px;
-    padding-top: -10px;
+    padding-top: 0px;
     font-weight: bold;
     text-decoration: none;
 }
