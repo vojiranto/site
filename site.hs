@@ -73,12 +73,12 @@ rusTimeLocale =  TimeLocale {
                   ("Thursday", "Thu"),  ("Friday",    "Fri"),
                   ("Saturday", "Sat")],
 
-        months = [("January",   "Jan"), ("February",  "Feb"),
-                  ("March",     "Mar"), ("April",     "Apr"),
-                  ("May",       "May"), ("June",      "Jun"),
-                  ("July",      "Jul"), ("August",    "Aug"),
-                  ("September", "Sep"), ("October",   "Oct"),
-                  ("November",  "Nov"), ("December",  "Dec")],
+        months = [("январь",   "Jan"), ("февраль",  "Feb"),
+                  ("март",     "Mar"), ("апрель",     "Apr"),
+                  ("май",      "May"), ("июнь",      "Jun"),
+                  ("июль",     "Jul"), ("август",    "Aug"),
+                  ("сентябрь", "Sep"), ("октябрь",   "Oct"),
+                  ("ноябрь",   "Nov"), ("декабрь",  "Dec")],
 
         amPm = ("AM", "PM"),
         dateTimeFmt = "%a %b %e %H:%M:%S %Z %Y",
