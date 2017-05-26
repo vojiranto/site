@@ -84,6 +84,7 @@ p {
     -webkit-hyphens: auto;
     -ms-hyphens: auto;
 }
+
 @media screen and (min-width: 400px) {
     .sidebar {
     	position: fixed;
@@ -93,7 +94,7 @@ p {
 @media screen and (max-width: 400px) {
     .sidebar {
     	position: fixed;
-    	width: 40%;
+    	width: 100px;
     }
 }
 
