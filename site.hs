@@ -2,7 +2,7 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend)
 import           Hakyll
-
+import           Data.Time.Format.Locale
 
 --------------------------------------------------------------------------------
 main :: IO ()
