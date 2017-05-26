@@ -25,7 +25,7 @@ div#header {
     position: fixed;
     background-color: #AAA;
     border-bottom: 2px solid black;
-    padding: 0px 100% 0px 0px;
+    padding: 100px 100% 0px 0px;
 }
 
 div#logo a {
