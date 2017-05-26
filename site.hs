@@ -63,7 +63,7 @@ main = hakyll $ do
 --------------------------------------------------------------------------------
 postCtx :: Context String
 postCtx =
-    dateFieldWith rusTimeLocale "date" "%e %B, %Y" `mappend`
+    dateFieldWith rusTimeLocale "date" "%e %B %Y года" `mappend`
     defaultContext
 
 rusTimeLocale :: TimeLocale
