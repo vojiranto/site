@@ -28,6 +28,10 @@ body {
     }
 }
 
+div#header {
+    padding: 30px 0px 0px 100px;
+}
+
 div#logo a {
     color: black;
     float: left;
