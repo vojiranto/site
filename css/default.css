@@ -23,7 +23,7 @@ body {
 
 div#header {
     color: white;
-    position: fixed;
+    position: absolute;
     background-color: #AAA;
     border-bottom: 2px solid black;
     margin-bottom: 0px;
