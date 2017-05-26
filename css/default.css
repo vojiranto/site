@@ -4,7 +4,7 @@ body {
     font-size: 16px;
     margin: 0px auto 0px auto;
     background-image: url(https://github.com/vojiranto/vojiranto.github.io/blob/master/images/f.png?raw=true);
-    background-position: top right;
+    background-position: top left;
 }
 @media screen and (min-width: 840px) {
     .body {
