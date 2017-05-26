@@ -88,6 +88,7 @@ p {
 .sidebar {
     position: fixed;
     background-color: #AAA;
+    border: 2px black;
     width: 10pc;
 }
 
