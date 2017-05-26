@@ -13,11 +13,13 @@ body {
         width: 600px;
         margin-left: 200px;
         padding: 20px 20px 20px 20px; 
+        border: 0.5px solid #CCC;
     }
 }
 
 @media screen and (max-width: 840px) {
     .body {        
+        border: 0.5px solid #CCC;
         background-color: #FFF;
         border-radius: 5px;
         color: black;
@@ -118,5 +120,6 @@ p {
 	padding-bottom: 20px;
 	margin-top: 0;
 	margin-bottom: 16px;
+	border: 0.5px solid #CCC;
 }
 
