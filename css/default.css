@@ -28,7 +28,7 @@ div#header {
     position: fixed;
     border-bottom: 2px solid black;
     margin-bottom: 0px;
-    padding: 22px auto 12px 0px;
+    padding: 22px 100pt 12px 0px;
 }
 
 div#logo a {
