@@ -39,6 +39,7 @@ div#header_fix {
     border: 0.5px solid #CCC;
     width:100%;
     height: 20px;
+    font-weight: bold;
 }
 
 div#header {
