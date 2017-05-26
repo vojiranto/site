@@ -28,6 +28,7 @@ body {
     }
 }
 div#header_fix {
+    z-index: 1;
     position: absolute;
     background-color: #EEE;
     height:30px;
