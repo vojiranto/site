@@ -12,7 +12,7 @@ import           Prelude hiding (div, writeFile)
 main :: IO ()
 main = do
   -- собираем css
-  writeFile "css/default.css" defaultCss
+--  writeFile "css/default.css" defaultCss
   hakyll $ do
     match "images/*" $ do
         route   idRoute
@@ -104,7 +104,7 @@ rusTimeLocale =  defaultTimeLocale {
 -- background black
 -- width     (px 600)
 
-                  
+            {-      
 defaultCss = render $ do
     body ? do
         backgroundImage . url $ "https://raw.githubusercontent.com" <> 
@@ -172,8 +172,7 @@ defaultCss = render $ do
         "-moz-hyphens" -: "auto"
         "-webkit-hyphens" -: "auto"
         "-ms-hyphens" -: "auto"
-{-
--}
+
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
 
@@ -188,3 +187,4 @@ defaultCss = render $ do
         fontSize (px 24)
     h2 ? do
         fontSize (px 20)
+-}
