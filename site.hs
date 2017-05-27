@@ -133,7 +133,7 @@ defaultCss = render $ do
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
         padding      (em 1) (em 1) (em 1) (em 1)
-        border       solid    (px 0.5)  (grayish $ 160))
+        border       solid    (px 0.5)  (grayish $ 160)
 
 {-
     .body {
