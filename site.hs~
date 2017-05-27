@@ -145,6 +145,7 @@ defaultCss = render $ do
         defaultBorder
         background (grayish $ 230)
         position fixed
+        width        (pc 100)
         fontSize (px 30)
 
 {-    div#header_fix {
