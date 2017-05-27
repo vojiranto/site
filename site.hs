@@ -116,6 +116,8 @@ defaultCss = render $ do
         defaultBorder = do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
+        -- стандартный отступ от верхнего края.
+        defaultTopMargin = px 5
 
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
@@ -123,7 +125,7 @@ defaultCss = render $ do
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)   (em 1)    (em 1)     (em 1)
-        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0))
+        margin       defaultTopMargin (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
         position fixed
@@ -135,7 +137,7 @@ defaultCss = render $ do
         defaultBorder
         fontSize     (px 16)
         width        (em 40)
-        margin       (em 0.5) (em 0) (em 0) (em 10)
+        margin       defaultTopMargin (em 0) (em 0) (em 10)
         padding      (em 1) (em 1) (em 1) (em 1)
 {-
     .body {
