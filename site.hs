@@ -17,7 +17,7 @@ main = hakyll $ do
 
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
     let baseCtx = tagCloudField "tagcloud" 80.0 200.0 tags <> defaultContext
-        postCtx' tag = postCtx tag baseCtx
+        postCtx' = postCtx baseCtx 
 
     match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
