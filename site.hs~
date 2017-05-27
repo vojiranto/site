@@ -112,9 +112,11 @@ defaultCss = render $ do
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
     
-    let defaultBorder = do
+    let -- оформление края блока.
+        defaultBorder = do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
+
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
         defaultBorder
@@ -133,7 +135,7 @@ defaultCss = render $ do
         defaultBorder
         fontSize     (px 16)
         width        (em 40)
-        margin       (em 0) (em 0) (em 0) (em 10)
+        margin       (em 1) (em 0) (em 0) (em 10)
         padding      (em 1) (em 1) (em 1) (em 1)
 {-
     .body {
