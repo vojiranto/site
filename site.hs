@@ -1,6 +1,7 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend, (<>))
+import           Control.Monad
 import           Hakyll
 import           Data.Text.Lazy.IO (writeFile)
 import           Data.Time
