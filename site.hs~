@@ -125,7 +125,7 @@ defaultCss = render $ do
         defaultPadding
         fontSize     (px 20)
                                    {-top-}  {-right-} {-bottom-} {-left-}
-        defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
+        padding (em 1)   (em 1)    (em 1)     (em 1)
         margin       t (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do

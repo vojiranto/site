@@ -122,7 +122,6 @@ defaultCss = render $ do
       (\(elem, t) -> elem ? do
         background    white
         defaultBorder
-        defaultPadding
         fontSize     (px 20)
                                    {-top-}  {-right-} {-bottom-} {-left-}
         padding (em 1)   (em 1)    (em 1)     (em 1)
