@@ -123,7 +123,7 @@ defaultCss = render $ do
 
     ".sidebar" ? do
         position fixed
-        width  (pc 10)
+        width  (em 10)
         height (pt 100)
 
     ".body" ? do
@@ -131,7 +131,7 @@ defaultCss = render $ do
         borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
         fontSize     (px 17)
         width        (em 80)
-        margin       (em 0) (em 0) (em 0) (em 20)
+        margin       (em 0) (em 0) (em 0) (em 10)
 {-
     .body {
         background-color: #FFF;
