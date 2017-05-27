@@ -143,8 +143,9 @@ defaultCss = render $ do
     ".header_fix" ? do
         zIndex 1
         defaultBorder
-        background (grayish $ 200)
+        background (grayish $ 230)
         position fixed
+        width        (pc 100)
         fontSize (px 30)
 
 {-    div#header_fix {
