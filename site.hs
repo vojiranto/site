@@ -112,14 +112,14 @@ defaultCss = render $ do
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
 
-    forM [".navigation", ".tagcloud"] $\elem -> elem ? do
+    forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
         borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)   (em 1)    (em 1)     (em 1)
         margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0.5)
-        border       solid    (px 0.5)  (grayish $ 160)
+        border       solid    (px 0.5)  (grayish $ 160))
 
 
     div # "#content" ? h1 ? do
