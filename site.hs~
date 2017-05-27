@@ -147,6 +147,7 @@ defaultCss = render $ do
         position fixed
         width        (pc 100)
         fontSize (px 30)
+        padding (em 0)   (em 0)    (em 0)     (em 0)
 
 {-    div#header_fix {
         z-index: 1;

@@ -117,7 +117,7 @@ defaultCss = render $ do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
         -- стандартный отступ от верхнего края.
-        defaultTopMargin = px 5
+        defaultTopMargin = px 20
                                    {-top-}  {-right-} {-bottom-} {-left-}
         defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
