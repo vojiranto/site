@@ -10,12 +10,12 @@
     <body>
         <div class="header_fix">Страничка путника</div>
         <div class="sidebar">
-            <ul class="navigation">
-                <li><a href="/">Главная</a></li>
-                <li><a href="/about.html">О себе</a></li>
-                <li><a href="/contact.html">Контакты</a></li>
-                <li><a href="/archive.html">Архив</a></li>
-            </ul>
+            <div class="navigation">
+                <div><a href="/">Главная</a></div>
+                <div><a href="/about.html">О себе</a></div>
+                <div><a href="/contact.html">Контакты</a></div>
+                <div><a href="/archive.html">Архив</a></div>
+            </div>
             <div class="tagcloud">
                 Теги:<br>
                 $tagcloud$
