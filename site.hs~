@@ -115,7 +115,8 @@ defaultCss = render $ do
         background    white
         borderRadius (px 5) (px 5) (px 5) (px 5)
         fontSize     (px 20)
-        padding      (px 30) (px 0) (px 20) (px 10)   
+                     {-top-} {-right-} {-bottom-} {-left-}
+        padding      (em 10) (em 0)    (em 10)    (em 10)   
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
