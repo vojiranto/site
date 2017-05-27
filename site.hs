@@ -163,7 +163,7 @@ defaultCss = render $ do
         fontSize (px 14)
         fontStyle italic
     p ? do
-        textIndent (right (em 2))         
+        textIndent (indent $ em 2)        
 
 {-
 p {
