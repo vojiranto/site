@@ -5,4 +5,4 @@ title: Контакты
 * Почта: al.lastor@bk.ru
 * Номер телефона: +79780933793
 * Профиль на github:  <a href="https://vojiranto.github.io/about.html" target="_blank">vojiranto</a>
-* Профиль на fanfics.me: < href="http://fanfics.me/user49176&ref=49176"  target="_blank">Al Lastor</a>
+* Профиль на fanfics.me: <a href="http://fanfics.me/user49176&ref=49176"  target="_blank">Al Lastor</a>
