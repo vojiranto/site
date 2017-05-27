@@ -103,7 +103,8 @@ rusTimeLocale =  defaultTimeLocale {
 defaultCss = render $ do
     body ? do
         --background black
-        backgroundImage $ url "https://github.com/vojiranto/vojiranto.github.io/blob/master/images/f.jpg?raw=true"
+        backgroundImage $ url "https://raw.githubusercontent.com" ++ 
+            "/vojiranto/vojiranto.github.io/master/images/f.jpg"
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
         width     (px 600)
