@@ -1,10 +1,39 @@
-body {
-    background-color: #EEE;
-    color: black;
-    font-size: 16px;
-    margin: 0px auto 0px auto;
-    background-image: url(https://github.com/vojiranto/vojiranto.github.io/blob/master/images/f.jpg?raw=true);
-    background-position: top right;
+@media screen and (min-width: 840px) {
+    body {
+        background-color: #EEE;
+        color: black;
+        font-size: 16px;
+        margin: 0px auto 0px auto;
+        background-image: url(https://github.com/vojiranto/vojiranto.github.io/blob/master/images/f.jpg?raw=true);
+        background-position: top right;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+@media screen and (max-width: 840px) {
+    body {
+        background-color: #EEE;
+        color: black;
+        font-size: 12px;
+        margin: 0px auto 0px auto;
+        background-image: url(https://github.com/vojiranto/vojiranto.github.io/blob/master/images/f.jpg?raw=true);
+        background-position: top right;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+}
 }
 @media screen and (min-width: 840px) {
     .body {
@@ -78,13 +107,7 @@ div#footer {
     text-align: right;
 }
 
-h1 {
-    font-size: 24px;
-}
 
-h2 {
-    font-size: 20px;
-}
 
 div.info {
     color: #555;
@@ -134,8 +157,7 @@ div.tagcloud {
 	border-bottom-left-radius: 0px;
     font-size: 20px; 
 	padding-top: 30px;
-	padding-bottom: 20px;
-	margin-left: 20px; 
+	padding-bottom: 20px; 
 	margin-top: 0;
 	margin-bottom: 16px;
 	border: 0.5px solid #CCC;
