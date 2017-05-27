@@ -110,9 +110,9 @@
         font-weight: bold;
     }
     .navigation {
-        text-indent: 0em;
+        text-indent: -2em;
         margin-bottom: 0em;
-        margin-top: 0.0em;
+        margin-top: -2em;
         background-color: #FFF;
     	border-radius: 5px;
     	border-top-left-radius: 0px;
