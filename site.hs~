@@ -5,6 +5,7 @@ import           Hakyll
 import           Data.Text.Lazy.IO (writeFile)
 import           Data.Time
 import           Clay
+import           Prelude hiding (div, writeFile)
 
 --------------------------------------------------------------------------------
 main :: IO ()
