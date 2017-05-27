@@ -7,6 +7,7 @@ executable site
   main-is:          site.hs
   build-depends:    base
                   , hakyll
+                  , clay
                   , time
   ghc-options:      -threaded
   default-language: Haskell2010
