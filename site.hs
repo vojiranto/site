@@ -114,6 +114,8 @@ defaultCss = render $ do
     ".navigation" ? do
         background    white
         borderRadius (px 5) (px 5) (px 5) (px 5)
+        fontSize     (px 20)
+        padding      (px 30) (px 20) (px 0) (px 0)   
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
