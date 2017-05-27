@@ -129,7 +129,7 @@ defaultCss = render $ do
     ".body" ? do
         background    white
         borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
-        fontSize     (px 20)
+        fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
 {-
