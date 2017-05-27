@@ -156,6 +156,8 @@ defaultCss = render $ do
         fontSize (px 12)
         marginTop (px 30)
         textAlign end
+        padding (px 12) (px 0) (px 12) (px 0)
+
 {-
 div#footer {
     border-top: solid 2px black;

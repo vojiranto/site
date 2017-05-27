@@ -155,7 +155,9 @@ defaultCss = render $ do
         color (grayish $ 100)
         fontSize (px 12)
         marginTop (px 30)
-        textAlight right
+        textAlign end
+        padding (px 12) (px 0) (px 12) (px 0)
+
 {-
 div#footer {
     border-top: solid 2px black;
