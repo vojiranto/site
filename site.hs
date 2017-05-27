@@ -166,7 +166,7 @@ defaultCss = render $ do
         textIndent (indent $ em 2)        
         marginTop (em 0)
         marginBottom (em 0)
-        textAlign justity
+        textAlign justify
         hyphens auto
 {-
 p {

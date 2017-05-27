@@ -164,7 +164,10 @@ defaultCss = render $ do
         fontStyle italic
     p ? do
         textIndent (indent $ em 2)        
-
+        marginTop (em 0)
+        marginBottom (em 0)
+        textAlign justity
+        hyphens auto
 {-
 p {
     text-indent: 2em;
