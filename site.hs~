@@ -117,8 +117,6 @@ defaultCss = render $ do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
 
-                                   {-top-}  {-right-} {-bottom-} {-left-}
-        defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
     forM [(".navigation", px 36), (".tagcloud", em 0.5)] $
       (\(elem, t) -> elem ? do
@@ -126,6 +124,8 @@ defaultCss = render $ do
         defaultBorder
         defaultPadding
         fontSize     (px 20)
+                                   {-top-}  {-right-} {-bottom-} {-left-}
+        defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
         margin       t (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
@@ -140,6 +140,8 @@ defaultCss = render $ do
         fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
+        padding      (em 4)   (em 1)    (em 1)     (em 1)
+
     ".header_fix" ? do
         zIndex 1
         defaultBorder
