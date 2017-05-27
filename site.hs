@@ -120,7 +120,7 @@ defaultCss = render $ do
                                    {-top-}  {-right-} {-bottom-} {-left-}
         defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
-    forM [(".navigation", px 20), (".tagcloud", em 0.5)] $
+    forM [(".navigation", px 40), (".tagcloud", em 0.5)] $
       (\(elem, t) -> elem ? do
         background    white
         defaultBorder
