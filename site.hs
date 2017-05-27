@@ -118,13 +118,13 @@ defaultCss = render $ do
             border       solid    (px 0.5)  (grayish $ 160)
         -- стандартный отступ от верхнего края.
         defaultTopMargin = px 5
+                           {-top-}  {-right-} {-bottom-} {-left-}
+        defaultPadding   = (em 1)   (em 1)    (em 1)     (em 1)
 
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
-        defaultBorder
+        defaultBorder >> defaultPadding
         fontSize     (px 20)
-                     {-top-} {-right-} {-bottom-} {-left-}
-        padding      (em 1)   (em 1)    (em 1)     (em 1)
         margin       defaultTopMargin (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
@@ -134,23 +134,23 @@ defaultCss = render $ do
 
     ".body" ? do
         background    white
-        defaultBorder
+        defaultBorder >> defaultPadding
         fontSize     (px 16)
         width        (em 40)
         margin       defaultTopMargin (em 0) (em 0) (em 10)
-        padding      (em 1) (em 1) (em 1) (em 1)
-{-
-    .body {
-        background-color: #FFF;
-        border-radius: 5px;
-        font-size: 17px;
-        width: 600px;
-        margin-left: 200px;
-        padding: 20px 20px 20px 20px; 
-        border: 0.5px solid #BBB;
-    }
--}
 
+{-    div#header_fix {
+        z-index: 1;
+        padding: 5px 20px 20px 20px;
+        position: fixed;
+        border-radius: 5px;
+        font-size: 30px; 
+    	background-color: #EEE;
+        border: 0.5px solid #BBB;
+        width:100%;
+        height: 20px;
+        font-weight: bold;
+    }-}
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
