@@ -9,7 +9,9 @@ import           Prelude hiding (div, writeFile)
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = writeFile "css/default.css" defaultCss >> hakyll $ do
+main = do
+  writeFile "css/default.css" defaultCss
+  hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
