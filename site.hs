@@ -10,6 +10,7 @@ import           Prelude hiding (div, writeFile)
 --------------------------------------------------------------------------------
 main :: IO ()
 main = do
+  -- собираем css
   writeFile "css/default.css" defaultCss
   hakyll $ do
     match "images/*" $ do
@@ -101,7 +102,7 @@ rusTimeLocale =  defaultTimeLocale {
                   
 defaultCss = render $ do
     body ? do
-        background black
+        --background black
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
         width     (px 600)
