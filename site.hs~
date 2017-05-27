@@ -120,14 +120,6 @@ defaultCss = render $ do
             background white
             textAlign (alignSide sideRight)
 
-            a ? do
-                color black
-                fontSize      (px 18)
-                fontWeight     bold
-                marginLeft    (px 12)
-                textDecoration none
-                textTransform  uppercase
-
     div # "#logo" ? a ? do
         color          black
         float          floatLeft
