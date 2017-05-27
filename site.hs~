@@ -111,10 +111,11 @@ defaultCss = render $ do
             "/vojiranto/vojiranto.github.io/master/images/f.jpg"
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
-
+    
+    let defaultBorderRadius = borderRadius (px 5) (px 5) (px 5) (px 5)
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
-        borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
+        defaultBorderRadius
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)   (em 1)    (em 1)     (em 1)
@@ -128,12 +129,12 @@ defaultCss = render $ do
 
     ".body" ? do
         background    white
-        borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
+        defaultBorderRadius
         fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
         padding      (em 1) (em 1) (em 1) (em 1)
-        border       solid    (px 0.5)  (grayish $ 160))
+        border       solid    (px 0.5)  (grayish $ 160)
 
 {-
     .body {
