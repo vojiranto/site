@@ -116,17 +116,9 @@ defaultCss = render $ do
         marginBottom (px 30)
         padding      (px 12) (px 0) (px 12) (px 0)
 
-        "navigation" ? do
+        ".navigation" ? do
             background white
             textAlign (alignSide sideRight)
-
-            a ? do
-                color black
-                fontSize      (px 18)
-                fontWeight     bold
-                marginLeft    (px 12)
-                textDecoration none
-                textTransform  uppercase
 
     div # "#logo" ? a ? do
         color          black
