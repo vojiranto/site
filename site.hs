@@ -116,7 +116,8 @@ defaultCss = render $ do
         marginBottom (px 30)
         padding      (px 12) (px 0) (px 12) (px 0)
 
-        "#navigation" ? do
+        ".navigation" ? do
+            background while
             textAlign (alignSide sideRight)
 
             a ? do

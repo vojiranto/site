@@ -110,13 +110,13 @@ defaultCss = render $ do
             "/vojiranto/vojiranto.github.io/master/images/f.jpg"
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
-        
+
     header ? do
         borderBottom solid (px 2) black
         marginBottom (px 30)
         padding      (px 12) (px 0) (px 12) (px 0)
 
-        "#navigation" ? do
+        ".navigation" ? do
             textAlign (alignSide sideRight)
 
             a ? do
