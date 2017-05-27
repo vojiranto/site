@@ -116,8 +116,9 @@ defaultCss = render $ do
         borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
-        padding      (em 1)  (em 1)    (em 1)     (em 1)
-        border       solid   (px 0.5)  (grayish $ 160)
+        padding      (em 1)   (em 1)    (em 1)     (em 1)
+        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0.5)
+        border       solid    (px 0.5)  (grayish $ 160)
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
