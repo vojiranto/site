@@ -99,15 +99,17 @@ rusTimeLocale =  defaultTimeLocale {
                   ("июля",     "Jul"), ("августа",  "Aug"),
                   ("сентября", "Sep"), ("октября",  "Oct"),
                   ("ноября",   "Nov"), ("декабря",  "Dec")]}
+
+-- background black
+-- width     (px 600)
+
                   
 defaultCss = render $ do
     body ? do
-        --background black
         backgroundImage . url $ "https://raw.githubusercontent.com" <> 
             "/vojiranto/vojiranto.github.io/master/images/f.jpg"
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
-        width     (px 600)
 
     header ? do
         borderBottom solid (px 2) black
