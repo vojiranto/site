@@ -17,6 +17,9 @@ main = hakyll $ do
 
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
     let baseCtx = tagCloudField "tagcloud" 80.0 200.0 tags <> defaultContext
+        postCtx' tag = postCtx tag baseCtx 
+                
+
     match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
@@ -27,8 +30,8 @@ main = hakyll $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags tags)
-            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags)
+            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags tags baseCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags tags baseCtx)
             >>= relativizeUrls
 
     create ["archive.html"] $ do
@@ -36,7 +39,7 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let archiveCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" postCtx' (return posts) `mappend`
                     constField "title" "Архив"               `mappend`
                     baseCtx
 
@@ -51,7 +54,7 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
-                      `mappend` listField "posts" postCtx (return posts)
+                      `mappend` listField "posts" postCtx' (return posts)
                       `mappend` baseCtx
 
             makeItem ""
@@ -64,7 +67,7 @@ main = hakyll $ do
         compile $ do
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
-                    listField "posts" postCtx (return posts) `mappend`
+                    listField "posts" postCtx' (return posts) `mappend`
                     constField "title" "Главная"            `mappend`
                     baseCtx
 
@@ -77,13 +80,11 @@ main = hakyll $ do
 
 
 --------------------------------------------------------------------------------
-postCtx :: Context String
-postCtx =
+postCtx baseCtx =
     dateFieldWith rusTimeLocale "date" "%e-го %B %Y-го года." `mappend`
-    defaultContext
+    baseCtx
 
-postCtxWithTags :: Tags -> Context String
-postCtxWithTags tags = tagsField "tags" tags `mappend` postCtx
+postCtxWithTags tags baseCtx = tagsField "tags" tags `mappend` postCtx baseCtx
 
 rusTimeLocale :: TimeLocale
 rusTimeLocale =  TimeLocale {
