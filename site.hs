@@ -133,7 +133,7 @@ defaultCss = render $ do
         width  (em 10)
         height (pt 100)
 
-    ".body" ? do
+    ".myBody" ? do
         background    white
         defaultBorder
         defaultPadding
