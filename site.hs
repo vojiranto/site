@@ -26,8 +26,8 @@ main = hakyll $ do
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    postCtx
-            >>= loadAndApplyTemplate "templates/default.html" postCtx
+            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags postCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags postCtx)
             >>= relativizeUrls
 
     create ["archive.html"] $ do
@@ -45,7 +45,7 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     tagsRules tags $ \tag pattern -> do
-        let title = "Заметки с тегом \"" ++ tag ++ "\""
+        let title = "Заметки с тегом «" ++ tag ++ "»"
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll pattern
