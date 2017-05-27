@@ -64,6 +64,11 @@
     	margin-bottom: 16px;
     	border: 0.5px solid #CCC;
     }
+    .sidebar {
+        position: fixed;
+        width: 10pc;
+        height: 100%;
+    }
 }
 @media screen and (max-width: 840px) {
     body {
@@ -130,6 +135,12 @@
     	margin-bottom: 16px;
     	border: 0.5px solid #CCC;
     }
+    .sidebar {
+        position: fixed;
+        width: 8pc;
+        height: 100%;
+    }
+
 }
 
 
@@ -189,9 +200,4 @@ p {
     -ms-hyphens: auto;
 }
 
-.sidebar {
-    position: fixed;
-    width: 10pc;
-    height: 100%;
-}
 
