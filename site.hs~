@@ -162,9 +162,19 @@ defaultCss = render $ do
         color (grayish $ 100)
         fontSize (px 14)
         fontStyle italic
-        
-{-
+    p ? do
+        textIndent (em 2)         
 
+{-
+p {
+    text-indent: 2em;
+    margin-bottom: 0em;
+    margin-top: 0.0em;
+    text-align: justify;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+}
 -}
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
