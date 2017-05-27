@@ -135,7 +135,6 @@ defaultCss = render $ do
     ".myBody" ? do
         background    white
         defaultBorder
-        defaultPadding
         fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
