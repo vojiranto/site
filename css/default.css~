@@ -128,8 +128,6 @@ p {
 
 
 div#tagcloud {
-    top: 400;
-    position: fixed;
     background-color: #FFF;
 	border-radius: 5px;
 	border-top-left-radius: 0px;

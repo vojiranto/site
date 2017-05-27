@@ -17,10 +17,10 @@
                 <li><a href="/contact.html">Контакты</a></li>
                 <li><a href="/archive.html">Архив</a></li>
             </ul>
-        </div>
-        <div class="tagcloud">
-            Tagcloud:<br>
-            $tagcloud$
+            <div class="tagcloud">
+                Теги:<br>
+                $tagcloud$
+            </div>
         </div>
         <div class="body">
             <div id="content">
