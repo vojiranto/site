@@ -33,7 +33,7 @@ body {
 }
 div#header_fix {
     z-index: 1;
-    background: linear-gradient(to bottom, #EEE, #FFF, #EEE);
+    background: linear-gradient(to bottom, #EEE, #FFF, #FFF, #FFF, #EEE);
     padding: 5px 20px 20px 20px;
     position: fixed;
     border-radius: 5px;
