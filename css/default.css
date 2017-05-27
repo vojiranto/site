@@ -16,7 +16,7 @@
         font-size: 20px;
     }
     .shift {
-    margin-left: 42px;
+        margin-left: 42px;
     }
 
     .body {
@@ -74,6 +74,10 @@
     }
 }
 @media screen and (max-width: 840px) {
+
+    .shift {
+        margin-left: 1em;
+    }
     body {
         background-color: #EEE;
         color: black;
