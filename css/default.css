@@ -13,7 +13,6 @@ body {
         color: black;
         font-size: 17px;
         width: 600px;
-        margin-left: 200px;
         padding: 20px 20px 20px 20px; 
         border: 0.5px solid #BBB;
     }
@@ -26,7 +25,7 @@ body {
         border-radius: 5px;
         color: black;
         font-size: 16px;
-        margin-left: 200px;
+
         margin-right: 40px;
         padding: 30px 20px 20px 20px;
     }
