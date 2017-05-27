@@ -119,6 +119,21 @@ defaultCss = render $ do
         padding      (em 1)   (em 1)    (em 1)     (em 1)
         margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0.5)
         border       solid    (px 0.5)  (grayish $ 160)
+    ".tagcloud" ? do
+        background    white
+        
+{-
+        background-color: #FFF;
+    	border-radius: 5px;
+    	border-top-left-radius: 0px;
+    	border-bottom-left-radius: 0px;
+        font-size: 20px; 
+    	padding-top: 30px;
+    	padding-bottom: 20px; 
+    	margin-top: 0;
+    	margin-bottom: 16px;
+    	border: 0.5px solid #CCC;
+-}
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
