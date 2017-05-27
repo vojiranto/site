@@ -118,12 +118,13 @@ defaultCss = render $ do
             border       solid    (px 0.5)  (grayish $ 160)
         -- стандартный отступ от верхнего края.
         defaultTopMargin = px 5
-                           {-top-}  {-right-} {-bottom-} {-left-}
-        defaultPadding   = (em 1)   (em 1)    (em 1)     (em 1)
+                                   {-top-}  {-right-} {-bottom-} {-left-}
+        defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
-        defaultBorder >> defaultPadding
+        defaultBorder
+        defaultPadding
         fontSize     (px 20)
         margin       defaultTopMargin (em 0.5)  (em 0.5)   (em 0))
 
@@ -134,7 +135,8 @@ defaultCss = render $ do
 
     ".body" ? do
         background    white
-        defaultBorder >> defaultPadding
+        defaultBorder
+        defaultPadding
         fontSize     (px 16)
         width        (em 40)
         margin       defaultTopMargin (em 0) (em 0) (em 10)
