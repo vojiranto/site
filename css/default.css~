@@ -100,7 +100,7 @@
         border-radius: 5px;
         color: black;
         font-size: 16px;
-        margin-left: 145px;
+        margin-left: 125px;
         margin-right: 20px;
         padding: 30px 20px 20px 20px;
     }
@@ -147,7 +147,7 @@
     }
     .sidebar {
         position: fixed;
-        width: 6pc;
+        width: 6.5pc;
         height: 100%;
     }
 
