@@ -127,7 +127,7 @@ p {
 }
 
 
-div#tagcloud {
+div.tagcloud {
     background-color: #FFF;
 	border-radius: 5px;
 	border-top-left-radius: 0px;
@@ -135,6 +135,7 @@ div#tagcloud {
     font-size: 20px; 
 	padding-top: 30px;
 	padding-bottom: 20px;
+	margin-left: 20px; 
 	margin-top: 0;
 	margin-bottom: 16px;
 	border: 0.5px solid #CCC;
