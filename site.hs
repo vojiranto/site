@@ -11,9 +11,9 @@ main = hakyll $ do
         route   idRoute
         compile copyFileCompiler
 
-match "css/*.hs" $ do
-    route   $ setExtension "css"
-    compile $ getResourceString >>= withItemBody (unixFilter "stack runghc" [])
+    match "css/*.hs" $ do
+        route   $ setExtension "css"
+        compile $ getResourceString >>= withItemBody (unixFilter "stack runghc" [])
 
     match "css/*.css" $ do
         route   idRoute
