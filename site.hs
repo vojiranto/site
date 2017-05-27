@@ -149,20 +149,21 @@ defaultCss = render $ do
         fontSize (px 30)
         margin  (em 0) (em 0) (em 0) (em 0)
         padding (em 0)   (em 0)    (em 0)     (em 0)
+    
+    ".footer" ? do
+        borderTop solid (px 2) black
+        color (grayish $ 160)
 
-{-    div#header_fix {
-        z-index: 1;
-        padding: 5px 20px 20px 20px;
-        position: fixed;
-        border-radius: 5px;
-        font-size: 30px; 
-    	background-color: #EEE;
-        border: 0.5px solid #BBB;
-        width:100%;
-        height: 20px;
-        font-weight: bold;
-    }-}
-
+{-
+div#footer {
+    border-top: solid 2px black;
+    color: #555;
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 12px 0px 12px 0px;
+    text-align: right;
+}
+-}
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
 
