@@ -121,6 +121,10 @@ defaultCss = render $ do
         margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0.5)
         border       solid    (px 0.5)  (grayish $ 160))
 
+    ".sidebar" ? do
+        position fixed
+        width  (pc 10)
+        height (pt 100)
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
