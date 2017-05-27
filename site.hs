@@ -116,8 +116,7 @@ defaultCss = render $ do
         defaultBorder = do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
-        -- стандартный отступ от верхнего края.
-        defaultTopMargin = px 10
+
                                    {-top-}  {-right-} {-bottom-} {-left-}
         defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
@@ -126,7 +125,7 @@ defaultCss = render $ do
         defaultBorder
         defaultPadding
         fontSize     (px 20)
-        margin       defaultTopMargin (em 0.5)  (em 0.5)   (em 0))
+        margin       (px 20) (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
         position fixed
