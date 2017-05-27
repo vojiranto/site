@@ -167,7 +167,6 @@ defaultCss = render $ do
         marginTop (em 0)
         marginBottom (em 0)
         textAlign justify
-        hyphens auto
         "-moz-hyphens" -: "auto"
         "-webkit-hyphens" -: "auto"
         "-ms-hyphens" -: "auto"

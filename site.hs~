@@ -168,6 +168,9 @@ defaultCss = render $ do
         marginBottom (em 0)
         textAlign justify
         hyphens auto
+        "-moz-hyphens" -: "auto"
+        "-webkit-hyphens" -: "auto"
+        "-ms-hyphens" -: "auto"
 {-
 p {
     text-indent: 2em;
