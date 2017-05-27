@@ -167,20 +167,10 @@ defaultCss = render $ do
         marginTop (em 0)
         marginBottom (em 0)
         textAlign justify
-        hyphens auto
         "-moz-hyphens" -: "auto"
         "-webkit-hyphens" -: "auto"
         "-ms-hyphens" -: "auto"
 {-
-p {
-    text-indent: 2em;
-    margin-bottom: 0em;
-    margin-top: 0.0em;
-    text-align: justify;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-}
 -}
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black

@@ -139,6 +139,8 @@ defaultCss = render $ do
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
         padding      (em 2.4)   (em 1)    (em 1)     (em 1)
+    ".header" ? do
+        padding (px 40) (px 0) (px 0) (px 100)
 
     ".header_fix" ? do
         zIndex 1
@@ -171,15 +173,6 @@ defaultCss = render $ do
         "-webkit-hyphens" -: "auto"
         "-ms-hyphens" -: "auto"
 {-
-p {
-    text-indent: 2em;
-    margin-bottom: 0em;
-    margin-top: 0.0em;
-    text-align: justify;
-    -moz-hyphens: auto;
-    -webkit-hyphens: auto;
-    -ms-hyphens: auto;
-}
 -}
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
