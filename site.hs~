@@ -14,11 +14,11 @@ main = hakyll $ do
     match "css/*.hs" $ do
         route   $ setExtension "css"
         compile $ getResourceString >>= withItemBody (unixFilter "stack runghc" [])
-
+{-
     match "css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
-
+-}
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
     let baseCtx = tagCloudField "tagcloud" 80.0 200.0 tags <> defaultContext
         postCtx' = postCtx baseCtx 

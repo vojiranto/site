@@ -13,7 +13,7 @@ main = hakyll $ do
 
     match "css/*.hs" $ do
         route   $ setExtension "css"
-        compile $ getResourceString >>= withItemBody (unixFilter "stack runghc" [])
+        compile $ getResourceString >>= withItemBody (unixFilter "runghc" [])
 {-
     match "css/*.css" $ do
         route   idRoute
