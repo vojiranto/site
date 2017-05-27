@@ -147,6 +147,7 @@ defaultCss = render $ do
         position fixed
         width        (pc 100)
         fontSize (px 30)
+        margin  (em 0) (em 0) (em 0) (em 0)
         padding (em 0)   (em 0)    (em 0)     (em 0)
 
 {-    div#header_fix {
