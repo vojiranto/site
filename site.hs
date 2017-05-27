@@ -1,6 +1,6 @@
 --------------------------------------------------------------------------------
 {-# LANGUAGE OverloadedStrings #-}
-import           Data.Monoid (mappend, <>)
+import           Data.Monoid (mappend, (<>))
 import           Hakyll
 import           Data.Time
 
