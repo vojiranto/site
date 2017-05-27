@@ -152,8 +152,9 @@ defaultCss = render $ do
     
     ".footer" ? do
         borderTop solid (px 2) black
-        color (grayish $ 160)
-
+        color (grayish $ 100)
+        fontSize (px 12)
+        marginTop (px 30)
 {-
 div#footer {
     border-top: solid 2px black;
