@@ -20,7 +20,9 @@ main = hakyll $ do
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" defaultContext
             >>= relativizeUrls
+        -- build up tags
 
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -42,6 +44,19 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
 
+    tagsRules tags $ \tag pattern -> do
+        let title = "Заметки с тегом \"" ++ tag ++ "\""
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll pattern
+            let ctx = constField "title" title
+                      `mappend` listField "posts" postCtx (return posts)
+                      `mappend` defaultContext
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/tag.html" ctx
+                >>= loadAndApplyTemplate "templates/default.html" ctx
+                >>= relativizeUrls
 
     match "index.html" $ do
         route idRoute
@@ -65,6 +80,9 @@ postCtx :: Context String
 postCtx =
     dateFieldWith rusTimeLocale "date" "%e-го %B %Y-го года." `mappend`
     defaultContext
+
+postCtxWithTags :: Tags -> Context String
+postCtxWithTags tags = tagsField "tags" tags `mappend` postCtx
 
 rusTimeLocale :: TimeLocale
 rusTimeLocale =  TimeLocale {

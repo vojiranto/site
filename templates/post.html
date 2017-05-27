@@ -1,7 +1,10 @@
 <div class="info">
     <p>Размещено $date$</p>
     $if(author)$
-        by $author$
+        <p>by $author$</p>
+    $endif$
+    $if(tags)$
+        <p>Теги: $tags$</p>
     $endif$
 </div>
 
