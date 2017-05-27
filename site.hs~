@@ -164,11 +164,7 @@ defaultCss = render $ do
         fontStyle italic
         
 {-
-div.info {
-    color: #555;
-    font-size: 14px;
-    font-style: italic;
-}
+
 -}
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
