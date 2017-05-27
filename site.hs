@@ -113,7 +113,7 @@ defaultCss = render $ do
 
     ".navigation" ? do
         background    white
-        borderRadius (em 0.1) (em 0.1) (em 0.1) (em 0.1)
+        borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)  (em 1)    (em 1)     (em 1)   
