@@ -138,7 +138,7 @@ defaultCss = render $ do
         fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
-        padding      (em 2)   (em 1)    (em 1)     (em 1)
+        padding      (em 2.2)   (em 1)    (em 1)     (em 1)
 
     ".header_fix" ? do
         zIndex 1
