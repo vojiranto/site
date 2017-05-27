@@ -126,6 +126,25 @@ defaultCss = render $ do
         width  (pc 10)
         height (pt 100)
 
+    ".body" ? do
+        background    white
+        borderRadius (em 0.2) (em 0.2) (em 0.2) (em 0.2)
+        fontSize     (px 17)
+        width        (em 80)
+        margin       (em 0) (em 0) (em 0) (em 20)
+{-
+    .body {
+        background-color: #FFF;
+        border-radius: 5px;
+        font-size: 17px;
+        width: 600px;
+        margin-left: 200px;
+        padding: 20px 20px 20px 20px; 
+        border: 0.5px solid #BBB;
+    }
+-}
+
+
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
 
