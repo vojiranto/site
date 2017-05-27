@@ -118,7 +118,7 @@ defaultCss = render $ do
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)   (em 1)    (em 1)     (em 1)
-        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0.5)
+        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0)
         border       solid    (px 0.5)  (grayish $ 160))
 
     ".sidebar" ? do
