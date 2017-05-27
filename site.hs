@@ -120,12 +120,13 @@ defaultCss = render $ do
                                    {-top-}  {-right-} {-bottom-} {-left-}
         defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
-    forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
+    forM [(".navigation", px 20), (".tagcloud", em 0.5)] $
+      (\(elem, t) -> elem ? do
         background    white
         defaultBorder
         defaultPadding
         fontSize     (px 20)
-        margin       (px 20) (em 0.5)  (em 0.5)   (em 0))
+        margin       t (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
         position fixed
