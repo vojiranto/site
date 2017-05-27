@@ -18,7 +18,7 @@
                 <li><a href="/archive.html">Архив</a></li>
             </ul>
             <div class="tagcloud">
-                <div style ="margin-left: 43px;">
+                <div class="shift">
                     Теги:<br>
                     $tagcloud$
                 </div>

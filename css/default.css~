@@ -15,6 +15,9 @@
     h2 {
         font-size: 20px;
     }
+    .shift {
+    margin-left: 42px;
+    }
 
     .body {
         background-color: #FFF;
