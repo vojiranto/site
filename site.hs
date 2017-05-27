@@ -112,15 +112,16 @@ defaultCss = render $ do
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
     
-    let defaultBorderRadius = borderRadius (px 5) (px 5) (px 5) (px 5)
+    let defaultBorder = do
+            borderRadius (px 5) (px 5) (px 5) (px 5)
+            border       solid    (px 0.5)  (grayish $ 160)
     forM [".navigation", ".tagcloud"] $ (\elem -> elem ? do
         background    white
-        defaultBorderRadius
+        defaultBorder
         fontSize     (px 20)
                      {-top-} {-right-} {-bottom-} {-left-}
         padding      (em 1)   (em 1)    (em 1)     (em 1)
-        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0)
-        border       solid    (px 0.5)  (grayish $ 160))
+        margin       (em 0.5) (em 0.5)  (em 0.5)   (em 0))
 
     ".sidebar" ? do
         position fixed
@@ -129,13 +130,11 @@ defaultCss = render $ do
 
     ".body" ? do
         background    white
-        defaultBorderRadius
+        defaultBorder
         fontSize     (px 16)
         width        (em 40)
         margin       (em 0) (em 0) (em 0) (em 10)
         padding      (em 1) (em 1) (em 1) (em 1)
-        border       solid    (px 0.5)  (grayish $ 160)
-
 {-
     .body {
         background-color: #FFF;
