@@ -22,7 +22,8 @@ main = hakyll $ do
             >>= relativizeUrls
         -- build up tags
 
-    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
+    let baseCtx = tagCloudField "tagcloud" 80.0 200.0 tags <> defaultContext
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -37,7 +38,7 @@ main = hakyll $ do
             let archiveCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Архив"               `mappend`
-                    defaultContext
+                    baseCtx
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -51,7 +52,7 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
                       `mappend` listField "posts" postCtx (return posts)
-                      `mappend` defaultContext
+                      `mappend` baseCtx
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/tag.html" ctx
@@ -65,7 +66,7 @@ main = hakyll $ do
             let indexCtx =
                     listField "posts" postCtx (return posts) `mappend`
                     constField "title" "Главная"            `mappend`
-                    defaultContext
+                    baseCtx
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
