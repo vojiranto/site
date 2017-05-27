@@ -2,23 +2,21 @@
 {-# LANGUAGE OverloadedStrings #-}
 import           Data.Monoid (mappend, (<>))
 import           Hakyll
+import           Data.Text.Lazy.IO (writeFile)
 import           Data.Time
+import           Clay
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = hakyll $ do
+main = writeFile "css/default.css" defaultCss >> hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
 
-    match "css/*.hs" $ do
-        route   $ setExtension "css"
-        compile $ getResourceString >>= withItemBody (unixFilter "stack" ["runghc"])
-{-
     match "css/*.css" $ do
         route   idRoute
         compile compressCssCompiler
--}
+
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
     let baseCtx = tagCloudField "tagcloud" 80.0 200.0 tags <> defaultContext
         postCtx' = postCtx baseCtx 
@@ -97,3 +95,53 @@ rusTimeLocale =  defaultTimeLocale {
                   ("июля",     "Jul"), ("августа",  "Aug"),
                   ("сентября", "Sep"), ("октября",  "Oct"),
                   ("ноября",   "Nov"), ("декабря",  "Dec")]}
+                  
+defaultCss = render $ do
+    body ? do
+        background black
+        fontSize  (px  16)
+        margin    (px   0) auto (px 0) auto
+        width     (px 600)
+
+    header ? do
+        borderBottom solid (px 2) black
+        marginBottom (px 30)
+        padding      (px 12) (px 0) (px 12) (px 0)
+
+        "#navigation" ? do
+            textAlign (alignSide sideRight)
+
+            a ? do
+                color black
+                fontSize      (px 18)
+                fontWeight     bold
+                marginLeft    (px 12)
+                textDecoration none
+                textTransform  uppercase
+
+    div # "#logo" ? a ? do
+        color          black
+        float          floatLeft
+        fontSize      (px 18)
+        fontWeight     bold
+        textDecoration none
+
+    div # "#content" ? h1 ? do
+        borderBottom solid (px 2) black
+
+    div # ".info" ? do
+        color "#555"
+        fontSize (px 14)
+        fontStyle italic
+
+    footer ? do
+        color     "#555"
+        fontSize  (px 12)
+        marginTop (px 30)
+        padding   (px 12) (px 0) (px 12) (px 0)
+        textAlign (alignSide sideCenter)
+
+    h1 ? do
+        fontSize (px 24)
+    h2 ? do
+        fontSize (px 20)
