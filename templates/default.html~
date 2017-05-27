@@ -18,8 +18,10 @@
                 <li><a href="/archive.html">Архив</a></li>
             </ul>
             <div class="tagcloud">
-                Теги:<br>
-                $tagcloud$
+                <div stle ="margin-left: 30px;">
+                    Теги:<br>
+                    $tagcloud$
+                </div>
             </div>
         </div>
         <div class="body">
