@@ -158,14 +158,16 @@ defaultCss = render $ do
         textAlign end
         padding (px 12) (px 0) (px 12) (px 0)
 
+    ".info" ? do
+        color (grayish $ 100)
+        fontSize (px 14)
+        fontStyle italic
+        
 {-
-div#footer {
-    border-top: solid 2px black;
+div.info {
     color: #555;
-    font-size: 12px;
-    margin-top: 30px;
-    padding: 12px 0px 12px 0px;
-    text-align: right;
+    font-size: 14px;
+    font-style: italic;
 }
 -}
     div # "#content" ? h1 ? do
