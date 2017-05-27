@@ -111,29 +111,12 @@ defaultCss = render $ do
         fontSize  (px  16)
         margin    (px   0) auto (px 0) auto
 
-    header ? do
-        borderBottom solid (px 2) black
-        marginBottom (px 30)
-        padding      (px 12) (px 0) (px 12) (px 0)
-
-        ".navigation" ? do
-            background white
-            textAlign (alignSide sideRight)
-
-    div # "#logo" ? a ? do
-        color          black
-        float          floatLeft
-        fontSize      (px 18)
-        fontWeight     bold
-        textDecoration none
+    ".navigation" ? do
+        background    white
+        borderRadius (px 5)
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
-
-    div # ".info" ? do
-        color "#555"
-        fontSize (px 14)
-        fontStyle italic
 
     footer ? do
         color     "#555"

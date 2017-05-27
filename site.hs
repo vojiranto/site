@@ -112,7 +112,8 @@ defaultCss = render $ do
         margin    (px   0) auto (px 0) auto
 
     ".navigation" ? do
-        background white
+        background    white
+        borderRadius (px 5)
 
     div # "#content" ? h1 ? do
         borderBottom solid (px 2) black
