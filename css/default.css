@@ -110,6 +110,9 @@
         font-weight: bold;
     }
     .navigation {
+        text-indent: 0em;
+        margin-bottom: 0em;
+        margin-top: 0.0em;
         background-color: #FFF;
     	border-radius: 5px;
     	border-top-left-radius: 0px;
