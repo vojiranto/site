@@ -117,7 +117,7 @@ defaultCss = render $ do
             borderRadius (px 5) (px 5) (px 5) (px 5)
             border       solid    (px 0.5)  (grayish $ 160)
         -- стандартный отступ от верхнего края.
-        defaultTopMargin = px 0
+        defaultTopMargin = px 10
                                    {-top-}  {-right-} {-bottom-} {-left-}
         defaultPadding   = padding (em 1)   (em 1)    (em 1)     (em 1)
 
@@ -139,7 +139,7 @@ defaultCss = render $ do
         defaultPadding
         fontSize     (px 16)
         width        (em 40)
-        margin       (px 5) (em 0) (em 0) (em 10)
+        margin       (em 0) (em 0) (em 0) (em 10)
     ".header_fix" ? do
         zIndex 1
         defaultBorder
