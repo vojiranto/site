@@ -11,10 +11,10 @@
         <div class="header_fix">Страничка путника</div>
         <div class="sidebar">
             <div class="navigation">
-                <div><a href="/">Главная</a></div>
-                <div><a href="/about.html">О себе</a></div>
-                <div><a href="/contact.html">Контакты</a></div>
-                <div><a href="/archive.html">Архив</a></div>
+                <a href="/">Главная</a>
+                <a href="/about.html">О себе</a>
+                <a href="/contact.html">Контакты</a>
+                <a href="/archive.html">Архив</a>
             </div>
             <div class="tagcloud">
                 Теги:<br>
