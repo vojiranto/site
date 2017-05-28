@@ -80,7 +80,6 @@ main = do
 
             getResourceBody
                 >>= applyAsTemplate indexCtx
-                >>= return . renderPandoc
                 >>= loadAndApplyTemplate "templates/default.html" indexCtx
                 >>= relativizeUrls
 
