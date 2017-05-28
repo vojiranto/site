@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="/css/default.css" />
     </head>
     <body>
+    <div class="centred">
         <div class="header_fix">Страничка путника</div>
         <div class="sidebar">
             <div class="navigation">
@@ -29,5 +30,6 @@
                 <a href="http://jaspervdj.be/hakyll">Hakyll</a>
             </div>
         </div>
+    </div>
     </body>
 </html>
