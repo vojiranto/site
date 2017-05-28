@@ -24,7 +24,7 @@ main = do
         compile compressCssCompiler
 
     tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
-    let baseCtx = tagCloudField "tagcloud" 30.0 100.0 tags <> defaultContext
+    let baseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
         postCtx' = postCtx baseCtx 
 
     match (fromList ["about.md", "contact.markdown"]) $ do
