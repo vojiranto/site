@@ -72,7 +72,7 @@ main = hakyll $ do
             -- FIXME    Здесь нужно ограничить количество загружаемых постов.
             --          это можно сделать заменив функцию recentFirst на свою
             --          стандартное определение смотри ниже.
-            posts <- recentFirst =<< loadAll "posts/*"
+            posts <- liftM (take 5) . recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx' (return posts) `mappend`
                     constField "title" "Главная"              `mappend`
