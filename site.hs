@@ -11,10 +11,7 @@ import           Prelude hiding (div, writeFile)
 
 --------------------------------------------------------------------------------
 main :: IO ()
-main = do
-  -- собираем css
---  writeFile "css/default.css" defaultCss
-  hakyll $ do
+main = hakyll $ do
     match "images/*" $ do
         route   idRoute
         compile copyFileCompiler
@@ -72,6 +69,9 @@ main = do
     match "index.html" $ do
         route idRoute
         compile $ do
+            -- FIXME    Здесь нужно ограничить количество загружаемых постов.
+            --          это можно сделать заменив функцию recentFirst на свою
+            --          стандартное определение смотри ниже.
             posts <- recentFirst =<< loadAll "posts/*"
             let indexCtx =
                     listField "posts" postCtx' (return posts) `mappend`
@@ -102,3 +102,20 @@ rusTimeLocale =  defaultTimeLocale {
                   ("сентября", "Sep"), ("октября",  "Oct"),
                   ("ноября",   "Nov"), ("декабря",  "Dec")]}
 
+{-
+-- | The reverse of 'chronological'
+recentFirst :: MonadMetadata m => [Item a] -> m [Item a]
+recentFirst = liftM reverse . chronological
+
+-- | Sort pages chronologically. Uses the same method as 'dateField' for
+-- extracting the date.
+chronological :: MonadMetadata m => [Item a] -> m [Item a]
+chronological =
+    sortByM $ getItemUTC defaultTimeLocale . itemIdentifier
+  where
+    sortByM :: (Monad m, Ord k) => (a -> m k) -> [a] -> m [a]
+    sortByM f xs = liftM (map fst . sortBy (comparing snd)) $
+                   mapM (\x -> liftM (x,) (f x)) xs
+
+https://www.stackage.org/haddock/lts-8.15/hakyll-4.9.5.1/src/Hakyll.Web.Template.List.html#recentFirst
+-}
