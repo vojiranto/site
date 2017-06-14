@@ -24,7 +24,7 @@ main = hakyll $ do
     let baseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
         postCtx' = postCtx baseCtx
 
-    match (fromList ["about.md", "contact.markdown"]) $ do
+    match (fromList ["about.md", "contact.markdown", "links.md"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" baseCtx
