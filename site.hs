@@ -20,9 +20,9 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
     let baseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
-        postCtx' = postCtx baseCtx 
+        postCtx' = postCtx baseCtx
 
     match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
@@ -45,7 +45,7 @@ main = hakyll $ do
             let archiveCtx =
                     listField "posts" postCtx' (return posts) `mappend`
                     constField "title" "Архив"               `mappend`
-                    baseCtx
+                    baseCtxs
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
