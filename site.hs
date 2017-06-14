@@ -45,7 +45,7 @@ main = hakyll $ do
             let archiveCtx =
                     listField "posts" postCtx' (return posts) `mappend`
                     constField "title" "Архив"               `mappend`
-                    baseCtxs
+                    baseCtx
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
@@ -117,5 +117,5 @@ chronological =
     sortByM f xs = liftM (map fst . sortBy (comparing snd)) $
                    mapM (\x -> liftM (x,) (f x)) xs
 
-https://www.stackage.org/haddock/lts-8.15/hakyll-4.9zzzzzz.5.1/src/Hakyll.Web.Template.List.html#recentFirst
+https://www.stackage.org/haddock/lts-8.15/hakyll-4.9.5.1/src/Hakyll.Web.Template.List.html#recentFirst
 -}
