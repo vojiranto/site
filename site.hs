@@ -34,7 +34,7 @@ main = hakyll $ do
     -- строим подмножество сайта с текстами.
     textTags <- buildTags "texts/*" (fromCapture "text_tags/*.html")
     
-    let textBaseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
+    let textBaseCtx = tagCloudField "tagcloud" 80.0 100.0 textTags <> defaultContext
         textPostCtx' = postCtx textBaseCtx
 
     match "texts/*" $ do
