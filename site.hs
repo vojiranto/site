@@ -67,12 +67,12 @@ main = hakyll $ do
 
     -- строим систему списков для тегов.
     tagsRules textTags $ \tag pattern -> do
-        let title = "Заметки с тегом «" ++ tag ++ "»"
+        let title = "Тексты с тегом «" ++ tag ++ "»"
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
-                      `mappend` listField "posts" postCtx' (return posts)
+                      `mappend` listField "posts" textPostCtx' (return posts)
                       `mappend` baseCtx
 
             makeItem ""
@@ -81,12 +81,12 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     tagsRules tags $ \tag pattern -> do
-        let title = "Тексты с тегом «" ++ tag ++ "»"
+        let title = "Заметки с тегом «" ++ tag ++ "»"
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
-                      `mappend` listField "posts" textPostCtx' (return posts)
+                      `mappend` listField "posts" postCtx' (return posts)
                       `mappend` baseCtx
 
             makeItem ""
