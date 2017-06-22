@@ -35,6 +35,8 @@ main = hakyll $ do
     textTags <- buildTags "texts/*" (fromCapture "text_tags/*.html")
     
     let textBaseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
+        textPostCtx' = postCtx textBaseCtx
+
     match "texts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -79,12 +81,12 @@ main = hakyll $ do
                 >>= relativizeUrls
 
     tagsRules tags $ \tag pattern -> do
-        let title = "Заметки с тегом «" ++ tag ++ "»"
+        let title = "Тексты с тегом «" ++ tag ++ "»"
         route idRoute
         compile $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
-                      `mappend` listField "posts" postCtx' (return posts)
+                      `mappend` listField "posts" textPostCtx' (return posts)
                       `mappend` baseCtx
 
             makeItem ""
