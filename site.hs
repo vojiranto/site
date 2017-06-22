@@ -31,6 +31,17 @@ main = hakyll $ do
             >>= relativizeUrls
         -- build up tags
 
+    -- строим подмножество сайта с текстами.
+    textTags <- buildTags "texts/*" (fromCapture "text_tags/*.html")
+    
+    let textBaseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
+    match "texts/*" $ do
+        route $ setExtension "html"
+        compile $ pandocCompiler
+            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags textTags textBaseCtx)
+            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags textTags textBaseCtx)
+            >>= relativizeUrls
+
     match "posts/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
@@ -50,6 +61,21 @@ main = hakyll $ do
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= relativizeUrls
+
+    -- строим систему списков для тегов.
+    tagsRules textTags $ \tag pattern -> do
+        let title = "Заметки с тегом «" ++ tag ++ "»"
+        route idRoute
+        compile $ do
+            posts <- recentFirst =<< loadAll pattern
+            let ctx = constField "title" title
+                      `mappend` listField "posts" postCtx' (return posts)
+                      `mappend` baseCtx
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/tag.html" ctx
+                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
     tagsRules tags $ \tag pattern -> do
