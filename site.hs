@@ -73,7 +73,7 @@ main = hakyll $ do
             posts <- recentFirst =<< loadAll pattern
             let ctx = constField "title" title
                       `mappend` listField "posts" textPostCtx' (return posts)
-                      `mappend` baseCtx
+                      `mappend` textBaseCtx
 
             makeItem ""
                 >>= loadAndApplyTemplate "templates/tag.html" ctx
