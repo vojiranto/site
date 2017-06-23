@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ru">
+    <head>
+        <meta charset="utf-8">
+        <title>Страничка путника - $title$</title>
+        <link rel="stylesheet" href="/css/default.css" />
+    </head>
+    <body>
+        <div class="centred">
+            <!-- Заголовок -->
+            <div class="header_fix">Страничка путника</div>
+            
+            <!-- Боковая панель -->
+            <div class="sidebar">
+                <!-- Меню -->
+                <div class="navigation">
+                    <a href="/">Главная</a>
+                    <a href="/about.html">О себе</a>
+                    <a href="/contact.html">Контакты</a>
+                    <a href="/archive.html">Архив</a>
+                </div>
+                <!-- Панель с тегами -->
+                <div class="tagcloud">
+                    Теги:<br>
+                    $tagcloud$
+                </div>
+            </div>
+            <!-- Основное тело сайта -->
+            <div class="myBody">
+                <h1>$title$</h1>
+                $body$
+                <div class="footer">
+                    Сайт создан с помощью 
+                    <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
