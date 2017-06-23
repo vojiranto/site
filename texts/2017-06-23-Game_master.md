@@ -1,5 +1,6 @@
 ---
 title: Мастер игры
+author: Ал Ластор
 tags: Worm
 ---
 
