@@ -64,6 +64,21 @@ main = hakyll $ do
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
                 >>= relativizeUrls
+    
+    create ["text_archive.html"] $ do
+        route idRoute
+        compile $ do
+            posts<- recentFirst =<< loadAll "texts/*"
+            let archiveCtx =
+                    listField "posts" textPostCtx' (return posts) `mappend`
+                    constField "title" "Архив текстов"            `mappend`
+                    textBaseCtx
+
+            makeItem ""
+                >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
+                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
+                >>= relativizeUrls
+    
 
     -- строим систему списков для тегов.
     tagsRules textTags $ \tag pattern -> do
