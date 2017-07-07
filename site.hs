@@ -44,7 +44,7 @@ main = hakyll $ do
             >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags textTags textBaseCtx)
             >>= relativizeUrls
 
-    match "eng_text/*" $ do
+    match "eng-text/*" $ do
         route $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags textTags textBaseCtx)
