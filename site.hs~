@@ -20,37 +20,16 @@ main = hakyll $ do
         route   idRoute
         compile compressCssCompiler
 
-    tags <- buildTags "posts/*" (fromCapture "tags/*.html")
+    tags <- buildTags "posts/*" (fromCapture "tags/*.html")    
     let baseCtx = tagCloudField "tagcloud" 80.0 100.0 tags <> defaultContext
-        postCtx' = postCtx baseCtx
+        postCtx' = postCtx baseCtx 
 
-    match (fromList ["about.md", "contact.markdown", "links.md"]) $ do
+    match (fromList ["about.md", "contact.markdown"]) $ do
         route   $ setExtension "html"
         compile $ pandocCompiler
             >>= loadAndApplyTemplate "templates/default.html" baseCtx
             >>= relativizeUrls
         -- build up tags
-
-    -- строим подмножество сайта с текстами.
-    textTags <- buildTags "texts/*" (fromCapture "text_tags/*.html")
-    
-    let textBaseCtx = tagCloudField "tagcloud" 80.0 100.0 textTags <> defaultContext
-        textPostCtx' = postCtx textBaseCtx
-
-    match "texts/*" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags textTags textBaseCtx)
-            >>= loadAndApplyTemplate "templates/default.html" (postCtxWithTags textTags textBaseCtx)
-            >>= relativizeUrls
-
-    match "eng_text/*" $ do
-        route $ setExtension "html"
-        compile $ pandocCompiler
-            >>= loadAndApplyTemplate "templates/post.html"    (postCtxWithTags textTags textBaseCtx)
-            >>= loadAndApplyTemplate "templates/default-eng.html" (postCtxWithTags textTags textBaseCtx)
-            >>= relativizeUrls
-
 
     match "posts/*" $ do
         route $ setExtension "html"
@@ -71,36 +50,6 @@ main = hakyll $ do
             makeItem ""
                 >>= loadAndApplyTemplate "templates/archive.html" archiveCtx
                 >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
-    
-    create ["text_archive.html"] $ do
-        route idRoute
-        compile $ do
-            posts<- recentFirst =<< loadAll "texts/*"
-            let archiveCtx =
-                    listField "posts" textPostCtx' (return posts) `mappend`
-                    constField "title" "Архив текстов"            `mappend`
-                    textBaseCtx
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/text_archive.html" archiveCtx
-                >>= loadAndApplyTemplate "templates/default.html" archiveCtx
-                >>= relativizeUrls
-    
-
-    -- строим систему списков для тегов.
-    tagsRules textTags $ \tag pattern -> do
-        let title = "Тексты с тегом «" ++ tag ++ "»"
-        route idRoute
-        compile $ do
-            posts <- recentFirst =<< loadAll pattern
-            let ctx = constField "title" title
-                      `mappend` listField "posts" textPostCtx' (return posts)
-                      `mappend` textBaseCtx
-
-            makeItem ""
-                >>= loadAndApplyTemplate "templates/tag.html" ctx
-                >>= loadAndApplyTemplate "templates/default.html" ctx
                 >>= relativizeUrls
 
     tagsRules tags $ \tag pattern -> do
