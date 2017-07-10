@@ -13,6 +13,10 @@ title: Полезные ссылки
  - <a href="https://ruhaskell.org" target="_blank">ruHaskell</a> --- русское сообщество программистов использующих Haskell.
  - <a href="https://www.ohaskell.guide/" target="_blank">О Haskell по-человечески</a> --- лучший учебник о Haskell, который есть на русском языке.
 
+### Программирование
+
+ - <a href="http://sd-company.su/article/basic_programming/sql-query" target="_blank">SQL</a> --- краткая методичка.
+
 ### Русский язык
 
  - <a href="http://konorama.ru/igry/zapatan/" target="_blank">Запятание сложных слов</a> --- пунктуационный словарь.
