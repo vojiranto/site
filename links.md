@@ -16,6 +16,7 @@ title: Полезные ссылки
 ### Программирование
 
  - <a href="http://sd-company.su/article/basic_programming/sql-query" target="_blank">SQL</a> --- краткая методичка.
+ - <a href="http://artemfedorov.ru/etc/mysql/field-types/">Типы в mysql</a> --- таблица с типами.
 
 ### Русский язык
 
